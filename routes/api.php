@@ -60,19 +60,6 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 	Route::apiResource('permissions', PermissionController::class);
 
 	Route::get('category-list', [CategoryController::class, 'getList']);
-	Route::get('/user', [ProfileController::class, 'user']);
-	Route::put('/user', [ProfileController::class, 'update']);
-
-	Route::get('abilities', function (Request $request) {
-		return $request->user()->roles()->with('permissions')
-			->get()
-			->pluck('permissions')
-			->flatten()
-			->pluck('name')
-			->unique()
-			->values()
-			->toArray();
-	});
 
 	Route::post('/user/{id}/submit-validation', [UserController::class, 'createNewValidation']);
 	Route::apiResource('validations', PendingValidationController::class);
@@ -112,3 +99,17 @@ Route::put('game-rooms/{id}', [GameRoomController::class, 'update']);
 Route::delete('game-rooms/{id}', [GameRoomController::class, 'destroy']);
 Route::get('games/getGameRooms/{route}', [GameController::class, 'getGameRooms']);
 Route::get('games/getGameData/{id}', [GameController::class, 'getGameData']);
+
+Route::get('/user', [ProfileController::class, 'user']);
+	Route::put('/user', [ProfileController::class, 'update']);
+
+	Route::get('abilities', function (Request $request) {
+		return $request->user()->roles()->with('permissions')
+			->get()
+			->pluck('permissions')
+			->flatten()
+			->pluck('name')
+			->unique()
+			->values()
+			->toArray();
+	});
