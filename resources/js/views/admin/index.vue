@@ -54,7 +54,7 @@ import useGames from "../../composables/games";
 import useValidations from "../../composables/validations";
 import useRoles from "../../composables/roles";
 import usePermissions from "../../composables/permissions";
-import useGamerooms from "../../composables/gamerooms";
+import useGamerooms from "../../composables/gameRooms";
 import { get } from 'lodash';
 
 // 👇 tus datos originales
