@@ -97,9 +97,9 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue';
 import LocaleSwitcher from './LocaleSwitcher.vue';
-import iRoulette from './iRoulette.vue';
-import iBlackJack from './iBlackJack.vue';
-import iBingo from './icons/iBingo.vue';
+// import iRoulette from './iRoulette.vue';
+// import iBlackJack from './iBlackJack.vue';
+// import iBingo from './icons/iBingo.vue';
 import LiveChat from './LiveChat.vue';
 import { authStore } from "../store/auth";
 import Drawer from 'primevue/drawer';
